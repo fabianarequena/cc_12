@@ -31,3 +31,23 @@ metricCardsArray.forEach(card => {
     card.innerText += " - Updated"; // Appends ' - Updated' to each card's text
     card.style.backgroundColor = "#f0f0f0"; // Change background for visibility
 });
+
+
+// Task 3 - JavaScript
+
+// Function to add product item
+function addProduct() {
+    const inventoryList = document.getElementById('inventoryList');
+    
+    const productItem = document.createElement('li');
+    productItem.setAttribute('class', 'product-item');
+    productItem.setAttribute('data-product', `Product ${inventoryList.children.length + 1}`);
+    productItem.innerText = `Product ${inventoryList.children.length + 1}`;
+    
+    // Add click listener to remove product
+    productItem.addEventListener('click', function() {
+        inventoryList.removeChild(productItem);
+    });
+    
+    inventoryList.appendChild(productItem);
+}
