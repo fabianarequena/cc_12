@@ -51,3 +51,23 @@ function addProduct() {
     
     inventoryList.appendChild(productItem);
 }
+
+
+// Task 4 - JavaScript
+
+const customerSection = document.getElementById('customerSection');
+
+// Parent listener
+customerSection.addEventListener('click', () => {
+    console.log('Customer section clicked');
+});
+
+// Add event listener to each customer card
+const customerCards = document.querySelectorAll('.customer-card');
+
+customerCards.forEach(card => {
+    card.addEventListener('click', (event) => {
+        console.log('Customer card clicked');
+        event.stopPropagation();  // Control event bubbling - remove this line to test bubbling
+    });
+});
